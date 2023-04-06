@@ -96,7 +96,7 @@ public class RestfulController {
 			}
 	}
 	
-	@PutMapping("/movieUpdate/{id}")
+	@PutMapping("/movie/movieUpdate/{id}")
 	public ResponseEntity<Object> updateMovie(@PathVariable int id,@RequestBody Movie newmv){
 		Movie med= mdao.updateMovie(id, newmv);
 		
