@@ -63,23 +63,19 @@ public class RestfulController {
 		return movieRepo.findAll();
 	}
 	
-	
+	//search by moviename
 	@GetMapping("/movie/getByMovieName/{movieName}")
-	public ResponseEntity<Movie>getMovieByName (@PathVariable String movieName){
-		Movie movie= movieRepo.findyByMoviename(movieName);
-		if(movie!=null) {
-			return new ResponseEntity<Movie>(movie, HttpStatus.OK);
-		}
-		else {
-			return new ResponseEntity<Movie>(movie, HttpStatus.NOT_FOUND);
-	}
+	public List<Movie>getMovieByName (@PathVariable String movieName){
+		return movieRepo.findyByMoviename(movieName);
 	}
 	
+	//search by genre
 	@GetMapping("/movie/getAllByGenre/{genre}")
 	public List<Movie>getMovieByGenre (@PathVariable String genre){
 		return movieRepo.getMoviesByGenre(genre);
 	}
 	
+	//search by language
 	@GetMapping("/movie/getAllByLanguage/{language}")
 	public List<Movie>getMovieByLanguage (@PathVariable String language){
 		return movieRepo.getMoviesByLanguage(language);
