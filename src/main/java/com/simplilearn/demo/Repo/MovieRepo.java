@@ -10,7 +10,7 @@ import com.simplilearn.demo.entity.Movie;
 public interface MovieRepo extends JpaRepository<Movie,Integer> {
 	
 	@Query("FROM Movie m WHERE m.movieName LIKE %?1%")
-	public Movie findyByMoviename(String movieName);
+	public List<Movie> findyByMoviename(String movieName);
 	
 	@Query("FROM Movie m WHERE m.id=?1")
 	public Movie findyByMovieID(int id);
