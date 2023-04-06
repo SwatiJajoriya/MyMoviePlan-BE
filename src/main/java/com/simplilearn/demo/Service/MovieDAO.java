@@ -22,6 +22,7 @@ public class MovieDAO {
 			oldmv.setPrice(newmv.getPrice());
 			oldmv.setGenre(newmv.getGenre());
 			oldmv.setLanguage(newmv.getLanguage());
+			oldmv.setImagePath(newmv.getImagePath());
 			return repo.save(oldmv);
 		}
 		else {
